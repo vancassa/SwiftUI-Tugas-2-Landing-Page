@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     // MARK: - PROPERTIES
-    @State private var showAlert = false
+    @State private var showAlert: Bool = false
+    @State private var isShowingDetailSheet: Bool = false
     
     // MARK: - BODY
     var body: some View {
@@ -45,13 +46,18 @@ struct ContentView: View {
                     Text("Travel")
                         .frame(maxWidth: .infinity)
                     
-                    Button {} label: {
+                    Button { isShowingDetailSheet.toggle() } label: {
                         Image(systemName: "cart.badge.plus")
                             .renderingMode(.original)
                             .accentColor(.green)
                             .padding()
                             .clipShape(Circle())
                             .frame(maxWidth: .infinity)
+                    }
+                    .sheet(isPresented: $isShowingDetailSheet) {
+                        DetailSheetView()
+                            .presentationDetents([.fraction(0.5), .medium])
+                            .presentationDragIndicator(.visible)
                     }
                 }
                 
