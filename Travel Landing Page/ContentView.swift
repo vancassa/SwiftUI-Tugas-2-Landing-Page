@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     // MARK: - PROPERTIES
-//    @State private var showAlert = false
+    @State private var showAlert = false
     
     // MARK: - BODY
     var body: some View {
@@ -28,6 +28,7 @@ struct ContentView: View {
             VStack {
                 HStack {
                     Button {
+                        showAlert = true
                     } label: {
                         Image(systemName: "cloud.sun.fill")
                             .renderingMode(.original)
@@ -36,7 +37,10 @@ struct ContentView: View {
                             .clipShape(Circle())
                             .frame(maxWidth: .infinity)
                     }
-                   
+                    .alert("Not yet available", isPresented: $showAlert) {
+                    } message: {
+                        Text( "Currently on active development")
+                    }
                     
                     Text("Travel")
                         .frame(maxWidth: .infinity)
