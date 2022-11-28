@@ -48,7 +48,7 @@ struct DetailSheetView: View {
                 
                 Spacer()
                 
-                Link(destination: URL(string: "https://www.vancassa.com")!) {
+                Link(destination: URL(string: "https://www.apple.com")!) {
                     HStack {
                         Image(systemName: "bag")
                         Text("Join Tour")

@@ -15,7 +15,6 @@ struct ContentView: View {
     // MARK: - BODY
     var body: some View {
         
-        
         ZStack {
             Image("go-to-beach")
                 .resizable()
@@ -34,7 +33,8 @@ struct ContentView: View {
                         Image(systemName: "cloud.sun.fill")
                             .renderingMode(.original)
                             .accentColor(.yellow)
-                            .padding()
+                            .padding(10)
+                            .background(Color("DarkGreen"))
                             .clipShape(Circle())
                             .frame(maxWidth: .infinity)
                     }
@@ -50,7 +50,8 @@ struct ContentView: View {
                         Image(systemName: "cart.badge.plus")
                             .renderingMode(.original)
                             .accentColor(.green)
-                            .padding()
+                            .padding(10)
+                            .background(Color("DarkGreen"))
                             .clipShape(Circle())
                             .frame(maxWidth: .infinity)
                     }
